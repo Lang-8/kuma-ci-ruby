@@ -3,3 +3,7 @@ FROM circleci/ruby:2.4.4-node-browsers
 
 RUN sudo apt-get update
 RUN sudo apt-get install -y imagemagick ffmpeg mecab mecab-ipadic-utf8 libmecab-dev
+
+# # Needed for cld gem
+ENV CFLAGS="-Wno-narrowing"
+ENV CXXFLAGS="-Wno-narrowing"
