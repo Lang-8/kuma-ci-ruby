@@ -7,3 +7,8 @@ RUN sudo apt-get install -y imagemagick ffmpeg mecab mecab-ipadic-utf8 libmecab-
 # # Needed for cld gem
 ENV CFLAGS="-Wno-narrowing"
 ENV CXXFLAGS="-Wno-narrowing"
+
+RUN mkdir -p /tmp/phantomjs-2.1.1
+RUN curl --output /tmp/phantomjs-2.1.1/phantomjs https://s3.amazonaws.com/circle-downloads/phantomjs-2.1.1
+RUN sudo cp /tmp/phantomjs-2.1.1/phantomjs /usr/local/bin/phantomjs
+RUN sudo chmod +x /usr/local/bin/phantomjs
