@@ -4,7 +4,7 @@ phases:
   pre_build:
     commands:
       - echo Logging in to Amazon ECR...
-      - $(aws ecr get-login --region $AWS_DEFAULT_REGION)
+      - $(aws ecr get-login --region $AWS_DEFAULT_REGION --no-include-email)
       - IMAGE_TAG=$(git rev-parse --short HEAD)
   build:
     commands:
