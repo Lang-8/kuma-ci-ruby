@@ -3,6 +3,8 @@ FROM circleci/ruby:2.5.3-node-browsers
 
 RUN sudo apt-get update
 RUN sudo apt-get install -y imagemagick ffmpeg mecab mecab-ipadic-utf8 libmecab-dev
+RUN sudo apt-get install zip python-pip python-dev jq -y
+RUN sudo pip install awscli
 
 # # Needed for cld gem
 ENV CFLAGS="-Wno-narrowing"
